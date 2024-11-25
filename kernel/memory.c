@@ -14,7 +14,6 @@
 extern struct mm_struct *get_task_mm(struct task_struct *task);
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 4, 61))
-extern void mmput(struct mm_struct *);
 
 phys_addr_t translate_linear_address(struct mm_struct *mm, uintptr_t va)
 {
@@ -195,7 +194,6 @@ bool read_process_memory(
 	{
 		return false;
 	}
-	mmput(mm);
 	pa = translate_linear_address(mm, addr);
 	if (!pa)
 	{
@@ -231,7 +229,6 @@ bool write_process_memory(
 	{
 		return false;
 	}
-	mmput(mm);
 	pa = translate_linear_address(mm, addr);
 	if (!pa)
 	{
