@@ -5,7 +5,7 @@
 #include "memory.h"
 #include "process.h"
 
-#define DEVICE_NAME "at_usb7"
+#define DEVICE_NAME "atusb"
 
 int dispatch_open(struct inode *node, struct file *file)
 {
@@ -109,4 +109,4 @@ module_exit(driver_unload);
 
 MODULE_DESCRIPTION("Linux Kernel.");
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("at_usb7");
+MODULE_AUTHOR("atusb");
