@@ -1,1 +1,1 @@
-obj-y += entry.o
+obj-y += entry.c
